@@ -1,28 +1,111 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjetoJQUERY_2026-1</title>
+    <title>Gerenciamento Avançado de Tarefas</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
     <div class="container">
+
         <h1>Nova Tarefa</h1>
-        <span id="msg-erro" class="escondido
-        erro-txt">O campo é obrigatorio.</span>
+
+        <span id="msg-erro"
+              class="escondido erro-txt">
+            O campo título é obrigatório.
+        </span>
 
         <form id="form-tarefa">
-            
+
             <input type="hidden" id="tarefa-id">
 
             <div class="form-group">
-                <label for="tarefa-titulo">Titulo*</label>
-                <input type="text" id="tarefa-titulo">
+                <label for="tarefa-titulo">
+                    Título *
+                </label>
+
+                <input
+                    type="text"
+                    id="tarefa-titulo"
+                    required>
             </div>
-        
+
+            <div class="form-group">
+                <label for="tarefa-desc">
+                    Descrição
+                </label>
+
+                <input type="text" id="tarefa-desc">
+            </div>
+
+            <div class="form-group">
+                <label for="tarefa-prioridade">
+                    Prioridade
+                </label>
+
+                <select id="tarefa-prioridade">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tarefa-data">
+                    Data Limite
+                </label>
+
+                <input type="date" id="tarefa-data">
+            </div>
+
+            <div class="form-group">
+                <label for="tarefa-status">
+                    Status
+                </label>
+
+                <select id="tarefa-status">
+                    <option value="Pendente">
+                        Pendente
+                    </option>
+
+                    <option value="Concluída">
+                        Concluída
+                    </option>
+                </select>
+            </div>
+
+            <div id="container-obs"></div>
+
+            <div class="acoes-form">
+
+                <button
+                    type="button"
+                    id="btn-add-obs">
+
+                    + Observação
+
+                </button>
+
+                <button
+                    type="submit"
+                    id="btn-salvar">
+
+                    Concluir
+
+                </button>
+
+            </div>
+
         </form>
 
+        <div id="area-tabela"></div>
+
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
